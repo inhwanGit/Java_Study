@@ -1,4 +1,4 @@
-package org.example;
+package org.example.bool;
 
 public class bool2 {
     public static void main(String[] args) {
