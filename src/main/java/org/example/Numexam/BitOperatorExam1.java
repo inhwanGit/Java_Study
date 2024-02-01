@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Numexam;
 
 public class BitOperatorExam1 {
     public static void main(String[] args){
