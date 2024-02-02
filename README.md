@@ -9,4 +9,7 @@
 ### 🗓️ Day2
 ##### •[Java 조건문](https://inhwan19991120.tistory.com/13)
 ##### •[Java 반복문과 label](https://inhwan19991120.tistory.com/14)
-##### •[객체지향 문법 Day1](https://inhwan19991120.tistory.com/15)
+##### •[Java 클래스(Calss) ~ 메소드 선언 방법](https://inhwan19991120.tistory.com/15)
+
+### 🗓️ Day3
+##### •[Java static 메소드(클래스 메소드) ~ 필드(field)](https://inhwan19991120.tistory.com/16)
