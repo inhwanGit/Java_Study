@@ -1,7 +1,7 @@
 package org.example.main;
 
-import 토요일.fw.Controller;
-import 토요일.myproject.FirstController;
+import org.example.fw.Controller;
+import org.example.myproject.FirstController;
 
 public class ControllerMain {
     public static void main(String[] args) {
