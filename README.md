@@ -17,4 +17,4 @@
 ##### •[Java 생성자](https://inhwan19991120.tistory.com/18)
 
 ### 🗓️ Day4
-##### •[추상클래스와 접근제한자](https://inhwan19991120.tistory.com/19)
+##### •[Java 추상클래스와 접근제한자](https://inhwan19991120.tistory.com/19)
