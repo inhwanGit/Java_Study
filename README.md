@@ -21,3 +21,6 @@
 
 ### 🗓️ Day5 🤧
 ##### •[Java 인터페이스](https://inhwan19991120.tistory.com/20)
+
+### 🗓️ Day6 🤒
+##### •[Java 배열](https://inhwan19991120.tistory.com/21)
