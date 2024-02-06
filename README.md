@@ -29,3 +29,4 @@
 ### 🗓️ Day7 😕
 ##### •[Java Singleton Pattern(싱글톤 패턴)](https://inhwan19991120.tistory.com/23)
 ##### •[Java Generic 과 Collection Framwork](https://inhwan19991120.tistory.com/24)
+##### •[Java Exception](https://inhwan19991120.tistory.com/25)
