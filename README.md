@@ -25,3 +25,6 @@
 ### 🗓️ Day6 🤒
 ##### •[Java 배열](https://inhwan19991120.tistory.com/21)
 ##### •[Java 주석문](https://inhwan19991120.tistory.com/22)
+
+### 🗓️ Day7 😕
+##### •[Java Singleton Pattern(싱글톤 패턴)](https://inhwan19991120.tistory.com/23)
