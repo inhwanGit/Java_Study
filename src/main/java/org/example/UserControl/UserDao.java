@@ -1,8 +1,6 @@
 package org.example.UserControl;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +21,20 @@ public class UserDao {
         }catch (Exception ex){
             ex.printStackTrace();
         }
+    }
+
+    public List<User> getUser(){
+        File file = new File(fileName);
+        if(!file.exists()){
+            return new ArrayList<>();
+        }
+
+        List<User> list = null;
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
+            list = (List<User>)in.readObject();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return list;
     }
 }

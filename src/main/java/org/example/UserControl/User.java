@@ -4,15 +4,14 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private String name;
-    private String birthday;
+    private int birthday;
     private String email;
-    private int age;
 
-    public User(String name, String birthday, String email, int age) {
+
+    public User(String name, int birthday, String email ) {
         this.name = name;
         this.birthday = birthday;
         this.email = email;
-        this.age = age;
     }
 
     public String getName(){
@@ -23,11 +22,11 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public String getBirthday() {
+    public int getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(int birthday) {
         this.birthday = birthday;
     }
 
@@ -39,21 +38,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", email='" + email + '\'' +
-                ", age=" + age +
                 '}';
     }
 }
