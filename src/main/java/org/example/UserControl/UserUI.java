@@ -25,6 +25,7 @@ public class UserUI {
         }
         return menuId;
     }
+    // "1. 회원등록"
     public User regMenu(){
 
         try {
@@ -42,7 +43,18 @@ public class UserUI {
         }
     }
 
-    public void printUser(){
-
+    //"2. 회원목록"
+    public void printUser(List<User> users){
+        System.out.println("이름           생년          email");
+        System.out.println("================================");
+        for(int i = 0; i<users.size(); i++){
+            User user = users.get(i);
+            System.out.print(user.getName());
+            System.out.println("    ");
+            System.out.print(user.getBirthday());
+            System.out.println("    ");
+            System.out.print(user.getEmail());
+            System.out.println();
+        }
     }
 }
