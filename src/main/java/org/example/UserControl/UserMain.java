@@ -10,7 +10,7 @@ public class UserMain {
         while (true){
             int menuId = userUI.menu();
             switch (menuId){
-                case 1 : {User user = new UserUI().regMenu(); users.add(user);
+                case 1 : {User user = new UserUI().regMenu(users); users.add(user);
                     System.out.println("회원등록이 완료되었습니다."); break;}
                 case 2 : {userUI.printUser(users); break;}
                 case 3 : {
