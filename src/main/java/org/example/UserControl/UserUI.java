@@ -13,9 +13,13 @@ public class UserUI {
     }
 
     public int menu(){
-        System.out.println("1. 회원등록");
-        System.out.println("2. 회원목록");
+        System.out.print("1. 회원등록");
+        System.out.print("      ");
+        System.out.print("2. 회원목록");
+        System.out.print("      ");
         System.out.println("3. 종료");
+        System.out.println("====================================");
+        System.out.print("이용하실 메뉴를 입력해주세요 : ");
         int menuId = -1;
         try {
             String line = br.readLine();
@@ -29,11 +33,11 @@ public class UserUI {
     public User regMenu(){
 
         try {
-            System.out.println("이름을 입력하세요 : ");
+            System.out.print("이름을 입력하세요 : ");
             String name = br.readLine();
-            System.out.println("생일을 입력하세요(숫자만 입력하세요) : ");
+            System.out.print("생일을 입력하세요(숫자만 입력하세요) : ");
             String strbirthday = br.readLine();
-            System.out.println("이메일을 입력하세요 : ");
+            System.out.print("이메일을 입력하세요 : ");
             String email = br.readLine();
             int birthday = Integer.parseInt(strbirthday);
             User user = new User(name, birthday, email);
@@ -50,9 +54,9 @@ public class UserUI {
         for(int i = 0; i<users.size(); i++){
             User user = users.get(i);
             System.out.print(user.getName());
-            System.out.println("    ");
+            System.out.print("        ");
             System.out.print(user.getBirthday());
-            System.out.println("    ");
+            System.out.print("        ");
             System.out.print(user.getEmail());
             System.out.println();
         }
