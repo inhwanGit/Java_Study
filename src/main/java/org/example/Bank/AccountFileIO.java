@@ -1,15 +1,15 @@
 package org.example.Bank;
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AccountFileIO {
-
     private String fileName;
 
     //생성자
-    public AccountFileIO(String fileName){
+    public AccountFileIO(String fileName) {
         this.fileName = fileName;
     }
 
@@ -28,8 +28,8 @@ public class AccountFileIO {
         }
 
         List<User> list = null;
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))) {
-
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
+            list = (List<User>)in.readObject();
         }catch (Exception ex){
             ex.printStackTrace();
         }

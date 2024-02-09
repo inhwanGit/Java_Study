@@ -2,17 +2,18 @@ package org.example.Bank;
 
 import java.io.Serializable;
 import java.time.Year;
+import java.util.Timer;
 
 public class User implements Serializable {
     private String name;
     private int age;
     private String address;
-    private String accountNumber;
+    private int accountNumber;
     private int money;
 
-    public User(String name, int age, String address, String accountNumber, int money){
+    public User(String name, int age, String address, int accountNumber, int money){
         this.name = name;
-        this.age = age;
+        this.age = Integer.parseInt(String.valueOf(Year.now()))-age+1;
         this.address = address;
         this.accountNumber = accountNumber;
         this.money = money;
@@ -31,7 +32,7 @@ public class User implements Serializable {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        this.age = Integer.parseInt(String.valueOf(Year.now()))-age+1;
 }
 
     public String getAddress() {
@@ -42,11 +43,11 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
 
