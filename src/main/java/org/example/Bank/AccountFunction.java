@@ -102,24 +102,40 @@ public class AccountFunction {
                 System.out.println("1.입금        2.출금");
                 System.out.println("==================");
                 System.out.print("입출금을 선택해주세요 : ");
-                int num = Integer.parseInt(br.readLine());
-                if (num == 1) {
-                    System.out.println(chk.getName() + "님 환영합니다. 현재 통장 잔액은 : " + chk.getMoney()+"입니다.");
-                    System.out.print("입금하실 금액을 입력해주세요 : ");
-                    int inputMoney = Integer.parseInt(br.readLine());
-                    int totalMoney = chk.getMoney() + inputMoney;
-                    chk.setMoney(totalMoney);
-                    System.out.println("입금이 완료되었습니다. 잔액은 : "+chk.getMoney()+"입니다.");
-                } else if (num == 2) {
-                    System.out.println(chk.getName() + "님 환영합니다. 현재 통장 잔액은 : " + chk.getMoney()+"입니다.");
-                    System.out.print("출금하실 금액을 입력해주세요 : ");
-                    int outputMoney = Integer.parseInt(br.readLine());
-                    if(chk.getMoney() < outputMoney){
-                        System.out.println("잔액이 부족합니다.");
-                    }else {
-                        int totalMoney = chk.getMoney() - outputMoney;
-                        chk.setMoney(totalMoney);
-                        System.out.println("출금이 완료되었습니다. 잔액은 : "+chk.getMoney()+"입니다.");
+                String num = br.readLine();
+                if (num.equals("1")) {
+                    while (true){
+                        System.out.println(chk.getName() + "님 환영합니다. 현재 통장 잔액은 : " + chk.getMoney()+"입니다.");
+                        System.out.print("입금하실 금액을 입력해주세요 : ");
+                        String strinputMoney = br.readLine();
+                        if(!strinputMoney.isEmpty() && !strinputMoney.equals("0")){
+                            int inputMoney = Integer.parseInt(strinputMoney);
+                            int totalMoney = chk.getMoney() + inputMoney;
+                            chk.setMoney(totalMoney);
+                            System.out.println("입금이 완료되었습니다. 잔액은 : "+chk.getMoney()+"입니다.");
+                            break;
+                        }
+                        System.out.println("잘못 입력하셨습니다.");
+                    }
+                } else if (num.equals("2")) {
+                    while (true){
+                        System.out.println(chk.getName() + "님 환영합니다. 현재 통장 잔액은 : " + chk.getMoney()+"입니다.");
+                        System.out.print("출금하실 금액을 입력해주세요 : ");
+                        String stroutputMoney = br.readLine();
+                        if(!stroutputMoney.isEmpty() && !stroutputMoney.equals("0")){
+                            int outputMoney = Integer.parseInt(stroutputMoney);
+                            if(outputMoney <= 0){
+                                System.out.println("잘못 입력하셨습니다.");
+                            }else if( chk.getMoney() < outputMoney){
+                                System.out.println("잔액이 부족합니다.");
+                            }
+                            else {
+                                int totalMoney = chk.getMoney() - outputMoney;
+                                chk.setMoney(totalMoney);
+                                System.out.println("출금이 완료되었습니다. 잔액은 : "+chk.getMoney()+"입니다.");
+                                break;
+                            }
+                        }
                     }
                 } else {
                     System.out.println("잘못 입력하셨습니다.");
@@ -139,11 +155,11 @@ public class AccountFunction {
     }
 
     public User chkAccountNumber(List<User> users){
-        System.out.print("회원님의 계좌번호를 입력해주세요 : ");
         try {
-            int accountNum = Integer.parseInt(br.readLine());
+            System.out.print("회원님의 계좌번호를 입력해주세요 : ");
+            String accountNum = br.readLine();
             for(User chkAccountNum : users){
-                if(chkAccountNum.getAccountNumber() == accountNum){
+                if(chkAccountNum.getAccountNumber() == Integer.parseInt(accountNum)){
                     return chkAccountNum;
                 }else {
                     System.out.println("존재하지 않는 계좌번호입니다.");
