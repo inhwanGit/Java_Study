@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.time.Year;
 import java.util.Timer;
 
+/*
+* 계좌 프로그램
+* 이름, 나이(birthYear - nowYear), 주소, 계좌번호, 돈
+* */
 public class User implements Serializable {
     private String name;
     private int age;
@@ -26,7 +30,6 @@ public class User implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
     public int getAge() {
         return age;
     }

@@ -1,6 +1,9 @@
 package org.example.Bank;
 
 import java.util.List;
+/**
+ * switch문을 통해 계좌 관리 프로그램 기능을 실행시킨다.
+ */
 
 public class AccountMain {
     public static void main(String[] args) {

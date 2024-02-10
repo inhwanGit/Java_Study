@@ -4,7 +4,9 @@ package org.example.Bank;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+* 계좌List를 저장할 수 있도록 한다.
+* */
 public class AccountFileIO {
     private String fileName;
 
