@@ -1,16 +1,15 @@
 package org.example.Thread;
 
-//1. Thread클래스 상속받는다.
-public class MyThread extends Thread{
+// 1. Runnable인터페이스를 구현한다.
+public class MyRunnable implements Runnable{
     private String str;
-
-    public MyThread(String str){
+    public MyRunnable(String str) {
         this.str = str;
     }
 
-    //2. run()메소드를 작성한다.
+    // 2. run()메소드를 오버라이딩 한다.
     @Override
-    public void run(){
+    public void run() {
         String name = Thread.currentThread().getName();
         System.out.println(name);
         for (int i = 0; i<10; i++){
