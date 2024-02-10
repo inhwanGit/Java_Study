@@ -20,6 +20,7 @@ public class VerSimpleWebServer {
 
         // Client와 읽고 쓸수 있는 InputStream, OutputStream 반환한다.
         OutputStream out = socket.getOutputStream();
+        PrintWriter pw = new PrintWriter(new OutputStreamWriter(out));
         InputStream in = socket.getInputStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String firstLine = br.readLine();
@@ -35,6 +36,20 @@ public class VerSimpleWebServer {
             System.out.println(headrs.get(i));
         }
 
+        //서버에게 응답메시지 보내기
+        // HTTP/1.1 200 OK <-- 상태메세지
+        // 헤더 1
+        // 헤더 2
+        // 빈줄
+        // 내용
+        pw.println("HTTP/1.1 200 OK");
+        pw.println("name : kim");
+        pw.println("email : inhwan@www.naver.com");
+        pw.println();
+        pw.println("<html>");
+        pw.println("<h1>hello!!</h1>");
+        pw.println("</html>");
+        pw.close();
 
         // HTTP 프로토콜은 클라이언트가 정보를 서버에게 보내준다. (요청정보)
 //        byte[] buffer = new byte[512];
@@ -44,8 +59,6 @@ public class VerSimpleWebServer {
 //            System.out.write(buffer, 0, readCount); //write는 바이트 배열을 출력할 수 있다.
 //        }
 
-
-        System.out.println(socket.toString());
 
         serversocket.close();
         System.out.println("서버가 종료됩니다.");
