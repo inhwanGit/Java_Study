@@ -1,8 +1,6 @@
 package org.example.WebServer;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -20,5 +18,28 @@ public class WebServer {
         // http://localhost:1000/hello
         // GET /hello HTTP/1.1
         System.out.println(br.readLine());
+
+        String line = null;
+        while (!(line = br.readLine()).equals("")){
+            System.out.println(line);
+        }
+        // 빈줄까지 읽어들이면 끝
+
+        OutputStream outputStream = clientSocket.getOutputStream();
+        PrintWriter pw = new PrintWriter(new OutputStreamWriter(outputStream));
+
+        pw.println("HTTP/1.1 200 OK");
+        pw.println("name:kim");
+        pw.println("email:inhwna@naver.com");
+        pw.println();
+        pw.println("<html>");
+        pw.println("hello world!!");
+        pw.println("</html>");
+
+        pw.flush(); // 서버에게 전송
+        br.close();
+        pw.close();
+        clientSocket.close();
+        serverSocket.close();
     }
 }
