@@ -60,8 +60,12 @@ class ClientThread extends Thread{
             pw.println("name:kim");
             pw.println("email:inhwna@naver.com");
             pw.println();
+            pw.flush();
+
+            // GET /hello HTTP/1.1 의 요청이 왔을때 /pf.png 대한 파일을 읽어서 출력한다.
+            // /hello를 어디서 읽어들이느냐? 서버입장으로 봤을때 어디 경로에 있는 파일을 읽어들이는지?
             pw.println("<html>");
-            pw.println(msg + "world!!");
+            pw.println(firstLine + "world!!");
             pw.println("</html>");
 
             pw.flush(); // 서버에게 전송
