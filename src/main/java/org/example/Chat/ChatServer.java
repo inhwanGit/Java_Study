@@ -14,7 +14,7 @@ public class ChatServer {
         List<PrintWriter> outList = Collections.synchronizedList(new ArrayList<>());
         while (true){
             Socket socket = serverSocket.accept(); // 클라이언트와 통신하기 위한 소켓
-
+            System.out.println("접속 : " + socket);
             ChatThread chatThread = new ChatThread(socket, outList);
             chatThread.start();
         }
@@ -50,6 +50,7 @@ class ChatThread extends Thread{
             while ((line = in.readLine())!= null){
                 for(int i = 0; i< outlist.size(); i++){
                     PrintWriter ow = outlist.get(i);
+                    ow.flush();
                     ow.println(line);
                 }
             }
