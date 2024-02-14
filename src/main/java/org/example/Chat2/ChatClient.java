@@ -24,6 +24,19 @@ public class ChatClient {
         inputThread.start();
 
         // 클라이언트는 읽어들인 메시지를 서버에게 전송한다.
+        try {
+            String line = null;
+            while ((line = br.readLine()) != null){
+                if("/quit".equals(line))
+                    break;
+                pw.println(line);
+                pw.flush();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        socket.close();
     }
 }
 
@@ -32,16 +45,7 @@ class InputThread extends Thread{
     public InputThread(BufferedReader br){
         this.br = br;
     }
-
     @Override
     public void run(){
-        try {
-            String line = null;
-            while ((line = br.readLine()) != null){
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
