@@ -33,7 +33,7 @@ public class ChatClient {
                 pw.flush();
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("...");
         }
 
         socket.close();

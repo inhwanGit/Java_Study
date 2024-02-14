@@ -13,6 +13,7 @@ public class ChatThread extends Thread{
     private PrintWriter pw;
     private Socket socket;
     List<ChatThread> list;
+
     public ChatThread(Socket socket, List<ChatThread> list) throws Exception{
         this.socket = socket;
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -22,5 +23,20 @@ public class ChatThread extends Thread{
         this.name = br.readLine();
         this.list = list;
         this.list.add(this);
+    }
+    @Override
+    public void run() {
+        // broadcast
+        // ChatThread는 사용자가 보낸 메시지를 읽어들인다.
+        // 접속된 모든 클라이언트에게 메시지를 보낸다.
+
+        String line = null;
+        try {
+            while ((line = br.readLine()) != null){
+
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
