@@ -24,11 +24,19 @@ public class ChatThread extends Thread{
         this.list = list;
         this.list.add(this);
     }
+    public void sendMessage(String msg){
+        pw.println(msg);
+        pw.flush();
+    }
+
     @Override
     public void run() {
         // broadcast
         // ChatThread는 사용자가 보낸 메시지를 읽어들인다.
         // 접속된 모든 클라이언트에게 메시지를 보낸다.
+
+        // 나를 제외한 모든 사용자에게 "00님이 연결되었습니다."
+        // 현재 ChatThread를 제외하고 보낸다.
 
         String line = null;
         try {
@@ -38,5 +46,9 @@ public class ChatThread extends Thread{
         }catch (Exception ex){
             ex.printStackTrace();
         }
+    }
+
+    private void broadcast(String msg, boolean includeMe){
+
     }
 }
