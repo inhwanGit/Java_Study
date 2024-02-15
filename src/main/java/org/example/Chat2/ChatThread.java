@@ -40,13 +40,17 @@ public class ChatThread extends Thread{
         // 나를 제외한 모든 사용자에게 "00님이 연결되었습니다."
         // 현재 ChatThread를 제외하고 보낸다.
 
-        String line = null;
         try {
-            while ((line = br.readLine()) != null){
+            broadcast(name + "님이 연결되었습니다.", false);
 
+            String line = null;
+
+            while ((line = br.readLine()) != null){
+                broadcast(name+" : "+line, true);
             }
-        }catch (Exception ex){
-            ex.printStackTrace();
+        }catch (Exception ex){ // ChatThread가 연결 끊어졌습니다.
+            broadcast(name + "님이 연결 끊어졌습니다.", false);
+            this.list.remove(this);
         }
     }
 
