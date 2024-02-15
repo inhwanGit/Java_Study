@@ -26,7 +26,7 @@ public class ChatClient {
         // 클라이언트는 읽어들인 메시지를 서버에게 전송한다.
         try {
             String line = null;
-            while ((line = br.readLine()) != null){
+            while ((line = keyboard.readLine()) != null){
                 if("/quit".equals(line))
                     break;
                 pw.println(line);
@@ -40,7 +40,7 @@ public class ChatClient {
     }
 }
 
-class InputThread extends Thread{
+class  InputThread extends Thread{
     BufferedReader br;
     public InputThread(BufferedReader br){
         this.br = br;
