@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ChatThread extends Thread{
@@ -49,6 +51,7 @@ public class ChatThread extends Thread{
     }
 
     private void broadcast(String msg, boolean includeMe){
-
+        List<ChatThread> chatThreads = new ArrayList<>();
+        Collections.copy(chatThreads, this.list);
     }
 }
