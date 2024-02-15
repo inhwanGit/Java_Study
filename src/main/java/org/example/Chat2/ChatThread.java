@@ -53,5 +53,13 @@ public class ChatThread extends Thread{
     private void broadcast(String msg, boolean includeMe){
         List<ChatThread> chatThreads = new ArrayList<>();
         Collections.copy(chatThreads, this.list);
+
+        try{
+            for (int i = 0; i<chatThreads.size(); i++){
+                ChatThread ct = chatThreads.get(i);
+            }
+        }catch (Exception ex){
+            System.out.println("///");
+        }
     }
 }
