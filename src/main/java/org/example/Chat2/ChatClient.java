@@ -35,8 +35,21 @@ public class ChatClient {
         } catch (IOException e) {
             System.out.println("...");
         }
-
-        socket.close();
+        try {
+            br.close();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        try {
+            pw.close();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        try {
+            socket.close();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
 

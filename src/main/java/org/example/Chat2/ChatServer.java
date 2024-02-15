@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ChatServer {
     public static void main(String[] args) throws Exception{
-        ServerSocket serverSocket = new ServerSocket(1000);
+        ServerSocket serverSocket = new ServerSocket(8888);
 
         List<ChatThread> list = Collections.synchronizedList(new ArrayList<>());
         while (true){
