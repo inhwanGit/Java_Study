@@ -46,6 +46,7 @@ public class ChatClient {
             ex.printStackTrace();
         }
         try {
+            System.out.println("socket colse...");
             socket.close();
         }catch (Exception ex){
             ex.printStackTrace();
