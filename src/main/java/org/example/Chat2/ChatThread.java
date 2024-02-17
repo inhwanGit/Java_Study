@@ -46,11 +46,24 @@ public class ChatThread extends Thread{
             String line = null;
 
             while ((line = br.readLine()) != null){
+                if("/quit".equals(line)){
+                    throw new RuntimeException("접속종료");
+                }
                 broadcast(name+" : "+line, true);
             }
         }catch (Exception ex){ // ChatThread가 연결 끊어졌습니다.
             broadcast(name + "님이 연결 끊어졌습니다.", false);
             this.list.remove(this);
+        }finally {
+            try {
+                br.close();
+            }catch (Exception ex){}
+            try {
+                pw.close();
+            }catch (Exception ex){}
+            try {
+                socket.close();
+            }catch (Exception ex){}
         }
     }
 
