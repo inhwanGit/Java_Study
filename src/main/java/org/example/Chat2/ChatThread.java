@@ -34,13 +34,9 @@ public class ChatThread extends Thread{
     @Override
     public void run() {
 
-        // ChatThread는 사용자가 보낸 메시지를 읽어들인다.
-        // 접속된 모든 클라이언트에게 메시지를 보낸다.
-
         // 나를 제외한 모든 사용자에게 "00님이 연결되었습니다."
         // 현재 ChatThread를 제외하고 보낸다.
         try {
-            // broadcast
             broadcast(name + "님이 연결되었습니다.", false);
 
             String line = null;
@@ -67,6 +63,9 @@ public class ChatThread extends Thread{
         }
     }
 
+    // broadcast
+    // ChatThread는 사용자가 보낸 메시지를 읽어들인다.
+    // 접속된 모든 클라이언트에게 메시지를 보낸다.
     private void broadcast(String msg, boolean includeMe){
         List<ChatThread> chatThreads = new ArrayList<>();
 
