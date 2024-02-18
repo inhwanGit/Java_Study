@@ -39,7 +39,6 @@ public class ChatThread extends Thread{
 
         // 나를 제외한 모든 사용자에게 "00님이 연결되었습니다."
         // 현재 ChatThread를 제외하고 보낸다.
-
         try {
             broadcast(name + "님이 연결되었습니다.", false);
 
